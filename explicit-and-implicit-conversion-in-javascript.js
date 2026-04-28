@@ -20,13 +20,23 @@ Use console.log() to clearly show the before-and-after type conversions.
 
 
 let result = "5" - 2;
-console.log("The result is: " + result);
+let num = Number(result) //Number function turns the value in result into a number regardless.
+console.log("The result is: " + num);
 
-let isValid = Boolean("false");
+let isValid = Boolean(false); //Boolean function is set to false. The console log should not show up.
 if (isValid) {
     console.log("This is valid!");
 }
 
-let age = "25";
-let totalAge = age + 5;
-console.log("Total Age: " + totalAge);
+let age = String(25); //Turns the number 25 into a string.
+let totalAge = age; //Got rid of the extra 5.
+console.log("Total Age: " + totalAge); //Should show up as 25.
+
+//Implicit Type Conversion
+console.log("25" * 5);
+
+//Explicit Type Conversion
+let string = "31";
+let numType = Number(string);
+console.log(numType);
+console.log(typeof numType);
